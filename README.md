@@ -8,6 +8,7 @@
   
 > [!NOTE]
 > <sup>* [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)への統合を行っています。</sup>  
+> <sup>* [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)では、以下の AZURE_SPEECH_SERVICE_API キーを現在直接Templateへ渡している課題も解消済み。</sup>  
   
 > [!WARNING]  
 > <sup>* 本コードはベータ版です。</sup>  
