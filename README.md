@@ -7,7 +7,7 @@
 [DjangoOpenAIStreamingChat](https://github.com/MITSUHIRO-KURIKI/DjangoOpenAIStreamingChat/ "DjangoOpenAIStreamingChat")をベースに[OpenAI API](https://openai.com/blog/openai-api "OpenAI API")と音声認識に[Azure Speech Studio](https://azure.microsoft.com/ja-jp/products/ai-services/ai-speech "Azure Speech Studio")を利用したVRMとの会話アプリを学習として作成しました
   
 > [!IMPORTANT]
-> <sup>* [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)への統合を行っています。</sup>  
+> [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)への統合を行っています。  
 > <sup>* [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)では、以下の AZURE_SPEECH_SERVICE_API キーを現在直接Templateへ渡している課題も解消済み。</sup>  
   
 > [!WARNING]  
