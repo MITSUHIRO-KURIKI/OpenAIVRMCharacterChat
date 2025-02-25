@@ -7,10 +7,10 @@
 [DjangoOpenAIStreamingChat](https://github.com/MITSUHIRO-KURIKI/DjangoOpenAIStreamingChat/ "DjangoOpenAIStreamingChat")をベースに[OpenAI API](https://openai.com/blog/openai-api "OpenAI API")と音声認識に[Azure Speech Studio](https://azure.microsoft.com/ja-jp/products/ai-services/ai-speech "Azure Speech Studio")を利用したVRMとの会話アプリを学習として作成しました
   
 > [!NOTE]
-> [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)への統合を行っています。  
-> <sup>* [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo)では、以下の AZURE_SPEECH_SERVICE_API キーを現在直接Templateへ渡している課題も解消済み。</sup>
-> > <sup>I'm integrating it into [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo).</sup>  
-> > <sup><sup>In [DjangoREST_NextJS_Demo](https://github.com/MITSUHIRO-KURIKI/DjangoREST_NextJS_Demo), the issue of currently passing the following AZURE_SPEECH_SERVICE_API key directly to the template has already been resolved.</sup></sup>  
+> [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo)への統合を行っています。  
+> <sup>* [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo)では、以下の AZURE_SPEECH_SERVICE_API キーを現在直接Templateへ渡している課題も解消済み。</sup>
+> > <sup>I'm integrating it into [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo).</sup>  
+> > <sup><sup>In [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo), the issue of currently passing the following AZURE_SPEECH_SERVICE_API key directly to the template has already been resolved.</sup></sup>  
   
 > [!WARNING]  
 > <sup>* 本コードはベータ版です。</sup>  
