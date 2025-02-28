@@ -1,4 +1,4 @@
-# DjangoOpenAIVRMChat
+# OpenAIVRMCharacterChat
 <img width="1080px" src="https://github.com/MITSUHIRO-KURIKI/DjangoOpenAIVRMChat/blob/main/static/templates/pages/home/img/img_fps10.gif" />  
 
 <sup>上記サンプルイメージでは、[フリー素材キャラクター「つくよみちゃん」](https://tyc.rei-yumesaki.net/ "フリー素材キャラクター「つくよみちゃん」") （© Rei Yumesaki）を使用しています。</sup>  
