@@ -1,0 +1,39 @@
+{% load i18n %}
+
+{# --- SUBJECT ▽ --- #}
+{% block subject %}
+no-reply: {{ site_name }} | {% blocktranslate %}Please complete this registration{% endblocktranslate %}
+{% endblock subject %}
+{# --- SUBJECT △ --- #}
+
+{# --- TEXT ▽ --- #}
+{% block text_body %}
+{% blocktranslate %}Temporary registration accepted{% endblocktranslate %}
+{% blocktranslate %}Please access the authentication URL below to complete this registration.{% endblocktranslate %}
+
+{% include 'accounts/cert_email/include/text_authentication_url.html' %}
+{% blocktranslate %}※ The authentication URL expires in {{ TOKEN_EXPIRED_MIN }}minutes. It becomes invalid after the expiration date.{% endblocktranslate %}
+
+{# --- FOOTER --- #}
+{% include 'accounts/cert_email/include/text_footer.html' %}
+{% endblock text_body %}
+{# --- TEXT △ --- #}
+
+{# --- HTML ▽ --- #}
+{% block html_body %}
+<h3>
+    {% blocktranslate %}Temporary registration accepted{% endblocktranslate %}
+</h3>
+<p>
+    {% blocktranslate %}Please access the authentication URL below to complete this registration.{% endblocktranslate %}
+</p>
+
+{% include 'accounts/cert_email/include/html_authentication_url.html' %}
+<p>
+    {% blocktranslate %}※ The authentication URL expires in  {{ TOKEN_EXPIRED_MIN }}minutes. It becomes invalid after the expiration date.{% endblocktranslate %}
+</p>
+
+{# --- FOOTER --- #}
+{% include 'accounts/cert_email/include/html_footer.html' %}
+{% endblock html_body %}
+{# --- HTML △ --- #}

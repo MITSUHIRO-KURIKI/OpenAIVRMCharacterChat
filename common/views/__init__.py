@@ -1,3 +1,0 @@
-from .CommonViews import (
-    ScrollSpyTemplateView,
-)

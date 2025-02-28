@@ -1,0 +1,2 @@
+from .UserProfile_viewsets import UserProfileViewSet
+from .UserReceptionSetting_viewsets import UserReceptionSettingViewSet

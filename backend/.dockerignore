@@ -1,0 +1,23 @@
+####################
+### misc
+/__pycache__
+/*.pyc
+.DS_Store
+
+####################
+### debug
+.gitignore
+db.sqlite3
+
+####################
+### Heroku
+bin/
+Procfile
+runtime.txt
+
+####################
+### other
+memo.txt
+*.vrm
+*.woff
+*.woff2

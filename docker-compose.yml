@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    tty: true                             # 本番環境では不要
+    ports:
+      - 3000:3000                         # frontapps
+      - 6006:6006                         # Storybook
+    environment:
+      - WATCHPACK_POLLING=true            # ホットリロード
+    extra_hosts:
+      - host.docker.internal:host-gateway # コンテナからホストマシンにアクセスするためのホスト名
+    networks:
+      drf_next_app_network:
+        ipv4_address: 172.20.0.2
+
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    tty: true                             # 本番環境では不要
+    ports:
+      - 8000:8000
+    environment:
+      - PYTHONPATH=/backend
+      - WATCHPACK_POLLING=true            # ホットリロード
+    extra_hosts:
+      - host.docker.internal:host-gateway # コンテナからホストマシンにアクセスするためのホスト名
+    networks:
+      drf_next_app_network:
+        ipv4_address: 172.20.0.3
+
+  postgres:
+    image: postgres:16.6
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    networks:
+      drf_next_app_network:
+        ipv4_address: 172.20.0.4
+
+  redis:
+    image: redis:7.2
+    ports:
+      - 6379:6379
+    networks:
+      drf_next_app_network:
+        ipv4_address: 172.20.0.5
+
+networks:
+  drf_next_app_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1   # 172.16.0.0～172.31.255.255

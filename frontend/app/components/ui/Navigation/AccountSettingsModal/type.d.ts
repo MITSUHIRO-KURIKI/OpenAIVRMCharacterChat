@@ -1,0 +1,1 @@
+export type AccountSettingsPage = 'profile' | 'reception_setting' | 'password_change' | 'delete';

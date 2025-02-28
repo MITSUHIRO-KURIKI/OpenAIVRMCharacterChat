@@ -1,1 +1,0 @@
-from .UserProperties_views import UserProfileUpdateView, UserReceptionSettingsUpdateView

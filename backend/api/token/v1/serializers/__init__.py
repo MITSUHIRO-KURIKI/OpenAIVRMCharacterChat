@@ -1,0 +1,1 @@
+from .SimplejwtCustom_serializers import CustomTokenObtainPairSerializer

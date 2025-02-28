@@ -1,0 +1,28 @@
+{% load i18n %}
+
+{# --- SUBJECT ▽ --- #}
+{% block subject %}
+no-reply: {% blocktranslate %}welcome to{% endblocktranslate %} {{ site_name }}
+{% endblock subject %}
+{# --- SUBJECT △ --- #}
+
+{# --- TEXT ▽ --- #}
+{% block text_body %}
+{% blocktranslate %}This registration has been completed{% endblocktranslate %}
+
+{# --- FOOTER --- #}
+{% include 'accounts/cert_email/include/text_footer.html' %}
+{% endblock text_body %}
+{# --- TEXT △ --- #}
+
+{# --- HTML ▽ --- #}
+{% block html_body %}
+<h3>
+    {% blocktranslate %}This registration has been completed{% endblocktranslate %}
+</h3>
+
+
+{# --- FOOTER --- #}
+{% include 'accounts/cert_email/include/html_footer.html' %}
+{% endblock html_body %}
+{# --- HTML △ --- #}

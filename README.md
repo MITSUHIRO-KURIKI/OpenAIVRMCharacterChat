@@ -1,189 +1,55 @@
 # OpenAIVRMCharacterChat
-<img width="1080px" src="https://github.com/MITSUHIRO-KURIKI/DjangoOpenAIVRMChat/blob/main/static/templates/pages/home/img/img_fps10.gif" />  
+<img width="1080px" src="https://github.com/MITSUHIRO-KURIKI/DjangoOpenAIVRMChat/blob/main/frontend/public/base/img_fps10.gif" />  
 
 <sup>上記サンプルイメージでは、[フリー素材キャラクター「つくよみちゃん」](https://tyc.rei-yumesaki.net/ "フリー素材キャラクター「つくよみちゃん」") （© Rei Yumesaki）を使用しています。</sup>  
+  
 
 ## What is this?
-[DjangoOpenAIStreamingChat](https://github.com/MITSUHIRO-KURIKI/DjangoOpenAIStreamingChat/ "DjangoOpenAIStreamingChat")をベースに[OpenAI API](https://openai.com/blog/openai-api "OpenAI API")と音声認識に[Azure Speech Studio](https://azure.microsoft.com/ja-jp/products/ai-services/ai-speech "Azure Speech Studio")を利用したVRMとの会話アプリを学習として作成しました
+[OpenAI API](https://openai.com/blog/openai-api "OpenAI API")と音声認識に[Azure Speech Studio](https://azure.microsoft.com/ja-jp/products/ai-services/ai-speech "Azure Speech Studio")を利用したVRMとの会話アプリを学習として作成しました
   
-> [!NOTE]
-> [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo)への統合を行っています。  
-> <sup>* [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo)では、以下の AZURE_SPEECH_SERVICE_API キーを現在直接Templateへ渡している課題も解消済み。</sup>
-> > <sup>I'm integrating it into [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo).</sup>  
-> > <sup><sup>In [Django-REST-framework-Nextjs-demo](https://github.com/MITSUHIRO-KURIKI/Django-REST-framework-Nextjs-demo), the issue of currently passing the following AZURE_SPEECH_SERVICE_API key directly to the template has already been resolved.</sup></sup>  
-  
-> [!WARNING]  
-> <sup>* 本コードはベータ版です。</sup>  
-> <sup>* AZURE_SPEECH_SERVICE_API キーを現在直接Templateへ渡しており、本番環境ではサーバサイドからの呼び出しが必要です。(調査中)</sup>  
-> <sup>* 即席のため不要なコードも多く、かなり汚いです。</sup>  
 
- 
 ## 設置
-<sup>[DjangoTemplate](https://github.com/MITSUHIRO-KURIKI/DjangoTemplate/ "DjangoTemplate")との差分のみ表示</sup>
-
-#### static > apps > chat > vrm へダウンロードした3Dモデル(.vrm)を格納します  
-3Dモデル(.vrm)はお好きなものをおいてください。モデルサイズ等に応じて、 templates/apps/chat/room/include/vrm_script.html のカメラ位置等を修正ください。  
-サンプルイメージに使用したのは[つくよみちゃん公式3Dモデル タイプA](https://tyc.rei-yumesaki.net/material/avatar/3d-a/ "つくよみちゃん公式3Dモデル タイプA")「①通常版（VRM）」です。
-
-
-#### config > settings.pyでの設定
-###### RADISの使用
+#### 1. `backend > .env` ファイルへの各種クラウドサービス情報の記載<br><sup>`backend > .env` file: Configure various cloud services</sup>  
+###### AZURE_SPEECH_SERVICE の設定 (VRMでの音声会話に使用)<br><sup>Azure Speech Service settings (used for voice conversations in VRM)</sup>  
 ```
-# RADIS(WebSoocket/Celery)
-IS_USE_RADIS = True
+AZURE_SPEECH_SERVICES_SUBSCRIPTION_KEY='*** YOUR AZURE_SPEECH_SERVICES_SUBSCRIPTION_KEY ***'  
+AZURE_SPEECH_SERVICES_REGION='*** YOUR AZURE_SPEECH_SERVICES_REGION ***'
 ```
-
-#### .envファイル用意
-###### AZURE_SPEECH_SERVICE の設定
-```
-AZURE_SPEECH_SERVICE_API_KEY='*** YOUR AZURE_SPEECH_SERVICE_API_KEY ***'  
-AZURE_SPEECH_SERVICE_REGION='*** YOUR AZURE_SPEECH_SERVICE_REGION ***'  
-AZURE_SPEECH_SERVICE_LANGUAGE='*** YOUR AZURE_SPEECH_SERVICE_LANGUAGE ***'
-```
-
-###### OpenAI API KEYの設定
+  
+###### OpenAI API KEYの設定 (GPT系統のモデル利用時に使用)<br><sup>OpenAI API KEY settings (used when utilizing GPT-based models)</sup>  
 ```
 OPENAI_API_KEY='*** YOUR OPENAI_API_KEY ***'
 ```
+  
+#### 2. `frontend > public > services > vrmchat > vrm` へダウンロードした3Dモデル(`.vrm`)を格納します<br><sup>`frontend > public > services > vrmchat > vrm`: Place the downloaded 3D model (`.vrm`)</sup>  
+<sup>3Dモデル(`.vrm`)はお好きなものをおいてください。モデルサイズ等に応じて、 `frontend > providers > VrmCoreProvider > VrmCoreProvider.tsx` のカメラ位置等を修正ください。<br><sup>You can place any 3D model you like. Depending on the model size, adjust the camera position, etc. in `frontend > providers > VrmCoreProvider > VrmCoreProvider.tsx`.</sup></sup>  
+<sup>サンプルイメージに使用したのは[つくよみちゃん公式3Dモデル タイプA](https://tyc.rei-yumesaki.net/material/avatar/3d-a/ "つくよみちゃん公式3Dモデル タイプA")「①通常版（VRM）」です。<br><sup>The sample image used is the official ["Tsukuyomi-chan" 3D model Type A](https://tyc.rei-yumesaki.net/material/avatar/3d-a/ "Tsukuyomi-chan” 3D model Type A") "① Normal version (VRM).”</sup></sup>
+  
 
-###### Radisの利用
+## 実行 <sub><sup>`run`</sup></sub>  
+> [!NOTE]
+> DefaultAdminユーザー (以下でログインできます)<br><sup>DefaultAdmin user (you can log in with the following credentials)</sup>  
+> <sup>Email: `admin★admin.com` (★→@)</sup>  
+> <sup>Password: `defaultPwd123`</sup>  
 ```
-RADIS_HOST='*** RADIS HOST ***'  
-RADIS_PORT='*** RADIS PORT ***'
+$ docker-compose up -d --build
+```  
+-> :coffee:  
+-> [http://localhost:3000/](http://localhost:3000/ "localhost:3000") 
+  
+* 開発時<br><sup>development</sup>  
 ```
-
-## 実行
-* terminal(0)  
-<sup>ここでエラーがでる場合には python=3.9.18 を確認してみてください</sup>
+$ docker-compose -f docker-compose.dev.yml up -d --build
 ```
-$ pip install -r requirements-base.txt
-$ ProjectSetupBat
-$ python manage.py runserver
-```
-* terminal(1)  
-```
-$ RunRedisServer
-```
-* terminal(2)  
-```
-$ RunCeleryWorker
-```
+  
 
 ## 主な実行環境
-<sup>詳細は requirements-base.txt をご覧ください</sup>
-```
-python=3.9.18
-Django==4.2.1
-channels==4.0.0
-celery==5.4.0
-```
+執筆前
+  
 
 ## Other
-本アプリケーションで使われる各種ライブラリのライセンスは改変したものを含めて本ライセンスには含まれません。各種ライブラリの原ライセンスに従って利用してください。
-
+本アプリケーションで使われる各種ライブラリのライセンスは改変したものを含めて本ライセンスには含まれません。各種ライブラリの原ライセンスに従って利用してください。<br><sup>Licenses for the various libraries used in the application are not included in the license. Please use them in accordance with the license of each library.</sup>  
+  
+  
 ## suppl.
-<details><summary>TREE</summary>
-
-```
-DjangoOpenAIVRMChat/
-├─accounts
-│  ├─forms
-│  ├─models
-│  │  └─receivers
-│  └─views
-│      └─send_mail
-├─apps
-│  ├─access_security
-│  │  └─models
-│  │      └─receivers
-│  ├─chat
-│  │  ├─models
-│  │  │  ├─ajax
-│  │  │  ├─ModelNameChoice
-│  │  │  └─query_search
-│  │  └─Utils
-│  ├─inquiry
-│  │  ├─models
-│  │  │  └─receivers
-│  │  └─views
-│  └─user_properties
-│      ├─models
-│      └─views
-├─common
-│  ├─lib
-│  │  ├─axes
-│  │  ├─social_core
-│  │  └─social_django
-│  ├─scripts
-│  │  ├─DjangoUtils
-│  │  ├─LlmUtils
-│  │  └─PythonCodeUtils
-│  └─views
-├─config
-│  ├─acsess_logic
-│  ├─admin_protect
-│  ├─extra_settings
-│  └─security
-├─media
-│  └─apps
-│      ├─chat
-│      │  └─ai_icon
-│      └─user_profile
-│          └─user_icon
-├─static
-│  ├─apps
-│  │  ├─chat
-│  │  │  │─ai_icon
-│  │  │  │   └─default
-│  │  │  └─vrm
-│  │  └─user_profile
-│  │      └─user_icon
-│  │          └─default
-│  └─templates
-│      ├─apps
-│      │  └─chat
-│      │      └─css
-│      ├─base
-│      ├─common
-│      │  ├─css
-│      │  ├─func
-│      │  └─lib
-│      ├─meta_image
-│      └─pages
-│          └─home
-├─templates
-│  ├─accounts
-│  │  ├─AccountDelete
-│  │  ├─AccountLock
-│  │  ├─EmailChange
-│  │  │  └─mail_template
-│  │  ├─LogIn
-│  │  ├─PasswordChange
-│  │  ├─PasswordReset
-│  │  │  └─mail_template
-│  │  ├─SignUp
-│  │  │  └─mail_template
-│  │  ├─TokenDelete
-│  │  └─UserIdSet
-│  ├─apps
-│  │  ├─chat
-│  │  │  ├─include
-│  │  │  └─room
-│  │  │      └─include
-│  │  │          └─feedback
-│  │  ├─inquiry
-│  │  │  └─inquiry_form
-│  │  │      └─notice_admin_mail_template
-│  │  └─user_properties
-│  │      ├─asset
-│  │      │  └─sidenav
-│  │      └─Settings
-│  ├─common
-│  │  ├─asset
-│  │  └─debug
-│  └─pages
-│      ├─general
-│      └─home
-└─templatetags
-```
-</details>
+執筆前

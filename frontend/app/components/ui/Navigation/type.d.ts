@@ -1,0 +1,1 @@
+export type MenuContent = 'llmChat' | 'vrmChat' | string | null;

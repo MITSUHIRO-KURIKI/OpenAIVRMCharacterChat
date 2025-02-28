@@ -1,0 +1,41 @@
+
+@layer utilities {
+  :root {
+    --scrollbar-width:           0.4rem;
+    --scrollbar-horizontal-rate: 1;
+    --scrollbar-track-color:     hsl(var(--background));
+    --scrollbar-thumb-color:     hsl(var(--scrollbar-thumb));
+  }
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+  }
+  ::-webkit-scrollbar:horizontal {
+    height: calc( var(--scrollbar-width) * var(--scrollbar-horizontal-rate) );
+  }
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-track:hover {
+    background-color: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius:    calc( var(--scrollbar-width) / 2 );
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--scrollbar-thumb));
+  }
+  ::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius:    calc( var(--scrollbar-width) * var(--scrollbar-horizontal-rate) / 2 );
+  }
+  ::-webkit-scrollbar-button,
+  ::-webkit-scrollbar-piece,
+  ::-webkit-scrollbar-corner,
+  ::-webkit-resizer {
+    display: none;
+  }
+  .invisible-scrollbar ::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,1 @@
+export { setupZxcvbnOptions, getZxcvbnStrengthLabel } from './zxcvbn.config';

@@ -1,0 +1,115 @@
+@layer base {
+  :root {
+    /* ground */
+    --background: 0 0% 100%; 
+    --foreground: 210 20% 16%;
+    /* scrollbar */
+    --scrollbar-thumb: 220 1% 90%;
+    /* border */
+    --border: 210 13.80% 88.63%;
+    /* input */
+    --input: 214.3 31.8% 91.4%;
+    /* ring (hsla) */
+    --ring: 216 98% 52% 0.25;
+    /* code */
+    --code: 330.19 66.50% 51.96%;
+    /* color type */
+    --primary:                210 20% 16%;
+    --primary-foreground:     210 3% 90%;
+    --secondary:              210 40% 96.1%;
+    --secondary-foreground:   222.2 47.4% 11.2%;
+    --success:                144 67% 84%;
+    --success-foreground:     144 50% 20%;
+    --info:                   200 80% 85%;
+    --info-foreground:        200 70% 30%;
+    --warning:                40 85% 85%;
+    --warning-foreground:     40 80% 25%;
+    --danger:                 356 80% 92%;
+    --danger-foreground:      356 80% 25%;
+    --muted:                  210 40% 96.1%;
+    --muted-foreground:       215.4 16.3% 46.9%;
+    --accent:                 240 4.8% 95.9%;
+    --accent-foreground:      240 5.9% 10%;
+    --destructive:            0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    /* common ▽ */
+    /* seaborn color palette */
+    --sns-tab10-1:  217.2 39.69% 49.41%;
+    --sns-tab10-2:  21.58 67.18% 59.42%;
+    --sns-tab10-3:  133.74 32.8% 49.61%;
+    --sns-tab10-4:  357.97 49.98% 53.73%;
+    --sns-tab10-5:  253.86 29.94% 57.45%;
+    --sns-tab10-6:  28.23 20.98% 47.65%;
+    --sns-tab10-7:  317.5 51.63% 70%;
+    --sns-tab10-8:  0 0% 54.9%;
+    --sns-tab10-9:  47.07 46.3% 62.75%;
+    --sns-tab10-10: 193.7 51.21% 59.8%;
+    /* tableau10 */
+    --tableau10-1:  211 36.3% 48.04%;
+    --tableau10-2:  29.82 88.4% 55.88%;
+    --tableau10-3:  359.14 69.7% 61.18%;
+    --tableau10-4:  175.38 31.1% 59.02%;
+    --tableau10-5:  112.69 34.17% 47.06%;
+    --tableau10-6:  46.85 82% 60.59%;
+    --tableau10-7:  316.67 25.50% 58.43%;
+    --tableau10-8:  353.9 100% 80.79%;
+    --tableau10-9:  21.64 24.3% 49.22%;
+    --tableau10-10: 17.14 9.2% 70.2%;
+    /* tableau20 */
+    --tableau20-1:  211 36.3% 48.04%;
+    --tableau20-2:  204.17 61% 76.87%;
+    --tableau20-3:  29.82 88.4% 55.88%;
+    --tableau20-4:  30 100% 74.51%;
+    --tableau20-5:  112.69 34.17% 47.06%;
+    --tableau20-6:  109.29 47.7% 65.49%;
+    --tableau20-7:  47.31 60.3% 44.51%;
+    --tableau20-8:  45.16 83.5% 66.67%;
+    --tableau20-9:  176.93 35.1% 44.12%;
+    --tableau20-10: 173.28 28.7% 63.14%;
+    --tableau20-11: 359.14 69.7% 61.18%;
+    --tableau20-12: 1.79 100% 80.2%;
+    --tableau20-13: 10.86 4.76% 45.3%;
+    --tableau20-14: 17.14 9.2% 70.2%;
+    --tableau20-15: 338.33 52.47% 63.73%;
+    --tableau20-16: 340.67 85.5% 86.47%;
+    --tableau20-17: 316.67 25.5% 58.43%;
+    --tableau20-18: 315.67 34.9% 74.12%;
+    --tableau20-19: 21.66 24.1% 49.61%;
+    --tableau20-20: 18.36 38% 74.71%;
+    /* common △ */
+  }
+  .dark {
+    /* ground */
+    --background: 210 20% 16%;
+    --foreground: 210 3% 90%;
+    /* scrollbar */
+    --scrollbar-thumb: 220 12% 10%;
+    /* border */
+    --border: 210 8.75% 31.37%;
+    /* input */
+    --input: 217.2 32.6% 17.5%;
+    /* ring (hsla) */
+    --ring:  216 98% 52% 0.25;
+    /* code */
+    --code: 330.3 66% 71.18%;
+    /* color */
+    --primary:                210 40% 98%;
+    --primary-foreground:     222.2 84% 4.9%;
+    --secondary:              217.2 32.6% 17.5%;
+    --secondary-foreground:   210 40% 98%;
+    --success:                145 60% 25%;
+    --success-foreground:     145 80% 88%;
+    --info:                   196 65% 32%;
+    --info-foreground:        196 100% 90%;
+    --warning:                42 85% 30%;
+    --warning-foreground:     42 100% 90%;
+    --danger:                 356 65% 35%;
+    --danger-foreground:      356 100% 90%;
+    --muted:                  217.2 32.6% 17.5%;
+    --muted-foreground:       215 20.2% 65.1%;
+    --accent:                 240 3.7% 15.9%;
+    --accent-foreground:      240 4.8% 95.9%;
+    --destructive:            0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+  }
+}  

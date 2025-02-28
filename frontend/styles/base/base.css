@@ -1,0 +1,15 @@
+@layer base {
+  /* font */
+  :root {
+      font-size: 20px; /* md↓ */
+  }
+  @media screen and (min-width: 768px) {
+      :root {
+        font-size: 16px; /* lg↑ */
+      }
+  }
+  :root {
+    /* radius */
+    --radius: 0.5rem; /* 8px */
+  }
+}

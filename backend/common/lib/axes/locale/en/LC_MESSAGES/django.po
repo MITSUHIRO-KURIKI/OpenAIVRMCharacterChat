@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-18 12:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: common/lib/axes/admin.py:26
+msgid "Form Data"
+msgstr ""
+
+#: common/lib/axes/admin.py:27 common/lib/axes/admin.py:77
+#: common/lib/axes/admin.py:125
+msgid "Meta Data"
+msgstr ""
+
+#: common/lib/axes/apps.py:15
+msgid "98_認証ログ"
+msgstr ""
+
+#: common/lib/axes/conf.py:108
+msgid "Account locked: too many login attempts. Please try again later."
+msgstr ""
+
+#: common/lib/axes/conf.py:116
+msgid ""
+"Account locked: too many login attempts. Contact an admin to unlock your "
+"account."
+msgstr ""
+
+#: common/lib/axes/models.py:16
+msgid "User Agent"
+msgstr ""
+
+#: common/lib/axes/models.py:25
+msgid "IP Address"
+msgstr ""
+
+#: common/lib/axes/models.py:34
+msgid "Username"
+msgstr ""
+
+#: common/lib/axes/models.py:44
+msgid "HTTP Accept"
+msgstr ""
+
+#: common/lib/axes/models.py:52
+msgid "Path"
+msgstr ""
+
+#: common/lib/axes/models.py:60
+msgid "Attempt Time"
+msgstr ""
+
+#: common/lib/axes/models.py:72
+msgid "Access lock out"
+msgstr ""
+
+#: common/lib/axes/models.py:87
+msgid "GET Data"
+msgstr ""
+
+#: common/lib/axes/models.py:91
+msgid "POST Data"
+msgstr ""
+
+#: common/lib/axes/models.py:95
+msgid "Failed Logins"
+msgstr ""
+
+#: common/lib/axes/models.py:106
+msgid "Logout Time"
+msgstr ""

@@ -1,0 +1,30 @@
+/* https://tailwindcss.com/docs/functions-and-directives */
+/* https://tailwindcss.com/docs/adding-custom-styles#using-multiple-css-files */
+/* https://tools.zipang.dev/rgb_hex_hsl_rgba_convert/ */
+
+/* @layer base */
+@import './base.css';
+@import './colors.css';
+@import '../components/shadcnComponents.css';
+
+/* @layer components */
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css');
+
+/* @layer utilities */
+@import '../components/scrollbar.css';
+@import '../components/navbar.css';
+
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

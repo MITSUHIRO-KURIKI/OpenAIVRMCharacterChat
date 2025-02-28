@@ -1,0 +1,2 @@
+from .AccountDelete_viewsets import AccountDeleteViewSet
+from .CustomUser_viewsets import CustomUserViewSet
